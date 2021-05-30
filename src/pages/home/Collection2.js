@@ -48,7 +48,6 @@ const Collection2 = () => {
                         return (
                           <div key={item._id} className='col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 custom-gutter'>
                             <div className='item'>
-                              <span className='category'>{getCate(item.categories)}</span>
                               <div className='thumb'>
                                 <Link to={`/stories/${item._id}`}>
                                   <div className='image-wrapper'>
@@ -85,6 +84,9 @@ const Collection2 = () => {
                       if (index < 8)
                         return (
                           <div key={item._id} className='item'>
+                            <span className={`count stt${index + 1}`}>
+                              {`${index + 1 < 9 && `0${index + 1}` || index + 1}`}
+                            </span>
                             <div className="thumb">
                               <Link to={`/stories/${item._id}`}>
                                 <div className='image-wrapper'>

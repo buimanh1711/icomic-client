@@ -194,10 +194,11 @@
       font-style: italic;
     }
     .item-container {
-      border: 1px solid rgba(255, 119, 56, 0.137);
-      border-radius: 2px;
+      // border: 1px solid rgba(255, 119, 56, 0.137);
       margin-bottom: 32px;
       .thumb {
+        border-radius: 8px;
+        overflow: hidden;
         width: 100%;
         img {
           width: 100%;
@@ -206,15 +207,15 @@
         }
       }
       .info {
-        margin-top: 12px;
-        padding: 4px;
+        padding: 4px 8px;
+        margin-top: 4px;
         a {
           font-size: 1.1rem;
           font-weight: bold;
           color: var(--primary-color);
           display: -webkit-box;
           -webkit-box-orient: vertical;
-          -webkit-line-clamp: 1;
+          -webkit-line-clamp: 2;
           overflow: hidden;
           text-align: center;
         }

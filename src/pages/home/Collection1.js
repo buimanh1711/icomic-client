@@ -32,7 +32,7 @@ const Collection1 = () => {
           <div className='row'>
             <div className='col-12 col-sm-12 col-md-12 col-lg-3 col-lx-3'>
               <div className='extra-item'>
-                <span className='category'>{getCate(stories[0] && stories[0].categories)}</span>
+                <span className='category'>Chapter: {stories[0] && stories[0].chapters && stories[0].chapters.length}</span>
                 <Link to={`/stories/${stories[0]._id}`}>
                   <div style={{ backgroundImage: `url(${stories[0].image && stories[0].image.url || '/images/product_default_img.png'})` }} className='image-wrapper'>
                     <div className='title'>
@@ -43,7 +43,7 @@ const Collection1 = () => {
               </div>
 
               <div className='extra-item'>
-                <span className='category'>{stories[1] && getCate(stories[1].categories)}</span>
+                <span className='category'>Chapter: {stories[1] && stories[1].chapters && stories[1].chapters.length || 'Chưa có chương'}</span>
                 <Link to={`/stories/${stories[1]._id}`}>
                   <div style={{ backgroundImage: `url(${stories[1].image && stories[1].image.url || '/images/product_default_img.png'})` }} className='image-wrapper'>
                     <div className='title'>
@@ -56,7 +56,7 @@ const Collection1 = () => {
 
             <div className='col-12 col-sm-12 col-md-12 col-lg-6 col-lx-6' style={{ position: 'relative' }}>
               <div className='main-item'>
-                <span className='category'>{stories[2] && getCate(stories[2].categories)}</span>
+                <span className='category'>Chapter: {stories[2] && stories[2].chapters && stories[2].chapters.length || 'Chưa có chương'}</span>
                 <Link to={`/stories/${stories[2]._id}`}>
                   <div style={{ backgroundImage: `url(${stories[2].image && stories[2].image.url || '/images/product_default_img.png'})` }} className='image-wrapper'>
                     <div className='title'>
@@ -68,7 +68,7 @@ const Collection1 = () => {
             </div>
             <div className='col-12 col-sm-12 col-md-12 col-lg-3 col-lx-3'>
               <div className='extra-item'>
-                <span className='category'>{stories[3] && getCate(stories[3].categories)}</span>
+                <span className='category'>Chapter: {stories[3] && stories[3].chapters && stories[3].chapters.length || 'Chưa có chương'}</span>
                 <Link to={`/stories/${stories[3]._id}`}>
                   <div style={{ backgroundImage: `url(${stories[3].image && stories[3].image.url || '/images/product_default_img.png'})` }} className='image-wrapper'>
                     <div className='title'>
@@ -79,7 +79,7 @@ const Collection1 = () => {
               </div>
 
               <div className='extra-item'>
-                <span className='category'>{stories[4] && getCate(stories[4].categories)}</span>
+                <span className='category'>Chapter: {stories[4] && stories[4].chapters && stories[4].chapters.length || 'Chưa có chương'}</span>
                 <Link to={`/stories/${stories[4]._id}`}>
                   <div style={{ backgroundImage: `url(${stories[4].image && stories[4].image.url || '/images/product_default_img.png'})` }} className='image-wrapper'>
                     <div className='title'>
