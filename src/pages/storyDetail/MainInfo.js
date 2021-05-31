@@ -51,12 +51,12 @@ const MainInfo = ({ storyInfo }) => {
   return (
     <div className='main-info'>
       <div className='row'>
-        <div className='col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6'>
+        <div className='col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3'>
           <div className='thumb'>
             <img src={storyInfo?.image?.url || '/images/product_default_img.png'} />
           </div>
         </div>
-        <div className='col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6'>
+        <div className='col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9'>
           <div className='info'>
             <h1>{storyInfo?.title}</h1>
             <ul>
@@ -78,9 +78,9 @@ const MainInfo = ({ storyInfo }) => {
             <p><i className="fas fa-pen-nib"></i> <strong>Cập nhật:</strong> {date(storyInfo.updatedChap)}</p>
             {
               !isFollowed &&
-              <button onClick={follow}><i class="fas fa-heart"></i> Theo dõi ({follows})</button>
+              <button onClick={follow}><i class="fas fa-heart"></i> Theo dõi</button>
               ||
-              <button onClick={unfollow}><i class="fas fa-heart"></i> Bỏ theo dõi ({follows})</button>
+              <button onClick={unfollow}><i class="fas fa-heart"></i> Bỏ theo dõi</button>
             }
             <p className='description'>{storyInfo?.shortDescription}</p>
           </div>

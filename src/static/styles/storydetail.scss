@@ -4,8 +4,8 @@
       img {
         box-shadow: 0px 0px 20px 10px rgba(139, 139, 139, 0.295);
         width: 100%;
-        aspect-ratio: 4/3;
-        border: 1px solid rgba(233, 156, 68, 0.664);
+        aspect-ratio: 3/4;
+        // border: 1px solid rgba(233, 156, 68, 0.664);
         border-radius: 8px;
         object-fit: cover;
       }
@@ -19,6 +19,7 @@
       h1 {
         font-size: 2rem;
         margin: 24px 0px;
+        margin-top: 0px;
         font-weight: bold;
         color: var(--primary-color);
       }

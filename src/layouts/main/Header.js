@@ -9,6 +9,9 @@ const Header = () => {
   const menu = useSelector(state => state.web.menu)
   const login = useSelector(state => state.users.login)
   const user = useSelector(state => state.users.user)
+  const { categories } = useSelector(state => state.categories)
+  const [categoryMenu, setCategoryMenu] = useState(false)
+
   const param = useRef(null)
   const param2 = useRef(null)
 
@@ -74,7 +77,7 @@ const Header = () => {
               <div className='user'>
                 {
                   login && user.role === 'admin' &&
-                  <Link title='Thêm truyện mới' to='/admin/overall' className='add'>
+                  <Link title='Thêm truyện mới' target="_blank" to='/admin/overall' className='add'>
                     <span></span>
                     <i className="fas fa-pen-nib"></i>
                   </Link>
@@ -102,6 +105,25 @@ const Header = () => {
                       <Link to={item.path}>
                         {item.title}
                       </Link>
+                      {
+                        item.path === '/categories' &&
+                        <div className='categories'>
+                          <ul>
+                            {
+                              categories && categories.length > 0 &&
+                              categories.map(item => {
+                                return (
+                                  <li>
+                                    <Link to={`/categories/${item._id}`}>
+                                      {item.title}
+                                    </Link>
+                                  </li>
+                                )
+                              })
+                            }
+                          </ul>
+                        </div>
+                      }
                     </li>
                   )
                 })
@@ -136,6 +158,7 @@ const Header = () => {
                         {item.title}
                       </Link>
                     </li>
+
                   ))
                 }
               </ul>
