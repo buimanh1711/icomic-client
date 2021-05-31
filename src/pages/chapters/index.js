@@ -46,7 +46,7 @@ const Chapter = () => {
           next &&
           <Link className='change-btn next-btn' to={`/chapters/${storyId}/${next && next._id}/${currentIndex + 2}`}><i className="fas fa-step-forward"></i></Link>
         }
-        <h1 className='story'>{chapter.story && chapter.story.title}</h1>
+        <h1 style={{ position: 'relative'}} className='story'><Link style={{ position: 'absolute', left: 0}} to='/'><i className="fas fa-home"></i></Link>{chapter.story && chapter.story.title}</h1>
         <h2 className='chap'>Chương {chap}: {chapter.name}</h2>
         <div dangerouslySetInnerHTML={{ __html: chapter.content || 'updating...' }}>
         </div>

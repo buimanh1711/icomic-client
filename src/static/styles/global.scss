@@ -58,7 +58,7 @@
 }
 
 #delete-pop {
-  position: fixed;;
+  position: fixed;
   top: 16px;
   height: 100px;
   background-color: rgb(255, 255, 255);
@@ -71,14 +71,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: popup .3s;
+  animation: popup 0.3s;
   z-index: 100;
   div {
     display: flex;
     width: 80%;
     justify-content: space-around;
     margin-top: 12px;
-    button  {
+    button {
       padding: 4px 16px;
       border-radius: 4px;
       color: white;
@@ -135,7 +135,7 @@
   color: var(--primary-color);
 }
 
-#stories-list {
+.stories-list {
   margin-top: 32px;
 
   .row.custom-gutter {
@@ -196,6 +196,7 @@
     .item-container {
       // border: 1px solid rgba(255, 119, 56, 0.137);
       margin-bottom: 32px;
+      position: relative;
       .thumb {
         border-radius: 8px;
         overflow: hidden;
@@ -229,5 +230,73 @@
         }
       }
     }
+    .item-container:hover .detail-popup {
+      display: block;
+    }
   }
+}
+
+.detail-popup {
+  transition: ease .5s;
+  position: absolute;
+  display: none;
+  z-index: 10;
+  right: -8px;
+  transform: translateX(100%);
+  span.triangle {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-left: 1px solid rgb(219, 219, 219);
+    border-bottom: 1px solid rgb(219, 219, 219);
+    top: 24px;
+    left: -4px;
+    background: white;
+    transform: rotate(45deg);
+  }
+  .detail-container {
+    box-shadow: 0px 0px 10px rgb(248, 153, 90);
+    padding: 12px 16px;
+    padding-bottom: 32px;
+    background: white;
+    border: 1px solid rgb(219, 219, 219);
+    width: 320px;
+    border-radius: 4px;
+    a {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 12px;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    p {
+      margin-bottom: 8px;
+    }
+    .categories {
+      margin-bottom: 8px;
+      span {
+        padding: 4px 8px;
+        border: 1px solid var(--primary-color);
+        margin-right: 8px;
+        color: var(--primary-color);
+      }
+    }
+    p.short-desc {
+      text-indent: 16px;
+      margin-top: 24px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 8;
+      overflow: hidden;
+    }
+  }
+}
+
+.detail-popup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  left: -9px;
 }

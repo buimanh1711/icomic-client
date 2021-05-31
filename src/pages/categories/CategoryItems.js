@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
+import DetailPopup from "../../global/DetailPopup"
 import Warning from "../../global/Warning"
 import { toggleLoading } from "../../redux/actions/web.actions"
 import { getAllStories } from "../../services/stories.services"
@@ -32,7 +33,7 @@ const CategoryItems = ({ category }) => {
   }, [category && category._id || category])
 
   return (
-    <div id='stories-list'>
+    <div className='stories-list'>
       {
         category &&
         <div className='stories-list-container'>
@@ -47,6 +48,7 @@ const CategoryItems = ({ category }) => {
                 currentItems.map(item => (
                   <div key={item._id} className='col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2 custom-gutter'>
                     <div className='item-container'>
+                      <DetailPopup story={item} />
                       <div className='thumb'>
                         <Link to={`/stories/${item._id}`}>
                           <img src={item.image && item.image.url || '/images/product_default_img.png'} />

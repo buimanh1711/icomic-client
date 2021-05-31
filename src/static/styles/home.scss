@@ -140,6 +140,9 @@
           }
         }
       }
+      .item:hover .detail-popup {
+        display: block;
+      }
     }
     .right-container {
       max-height: 700px;
