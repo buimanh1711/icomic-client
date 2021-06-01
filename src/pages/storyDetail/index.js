@@ -13,7 +13,15 @@ const DetailStory = () => {
   const [story, setStory] = useState({})
   const dispatch = useDispatch()
 
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
+
   useEffect(() => {
+    scrollTop()
     dispatch(toggleLoading(true))
     getOneStory(_id)
       .then(res => {
