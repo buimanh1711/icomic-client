@@ -41,6 +41,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    scrollTop()
     dispatch(authAsync())
   }, [])
 
